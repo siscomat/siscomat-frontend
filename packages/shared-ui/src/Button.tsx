@@ -19,8 +19,8 @@ export const Button = ({
       ? "bg-brand-subtle text-white cursor-not-allowed"
       : "bg-brand-primary text-white hover:bg-brand-lighter active:bg-brand-darker focus:ring-brand-primary",
     secondary: disabled
-      ? "bg-light-2 text-dark-4 cursor-not-allowed"
-      : "bg-light-2 text-dark-2 hover:bg-light-1 active:bg-dark-4 focus:ring-brand-lighter",
+      ? "bg-info-subtle text-white cursor-not-allowed"
+      : "bg-info-primary text-white hover:bg-info-darker active:bg-info-darker focus:ring-info-primary",
     success: disabled
       ? "bg-success-subtle text-white cursor-not-allowed"
       : "bg-success-primary text-white hover:bg-success-darker active:bg-success-darker focus:ring-success-primary",
