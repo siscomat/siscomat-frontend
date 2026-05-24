@@ -49,13 +49,13 @@ export const Navbar = () => {
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
+            {user.esAdmin && (
+              <Button onClick={() => navigate("/gestores")}>Gestores</Button>
+            )}
             <Button onClick={() => navigate("/plantillas")}>Plantillas</Button>
             <Button onClick={() => navigate("/constancias")}>
               Constancias
             </Button>
-            {user.esAdmin && (
-              <Button onClick={() => navigate("/gestores")}>Gestores</Button>
-            )}
           </div>
         </div>
 
@@ -93,13 +93,13 @@ export const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-brand-primary border-t border-brand-darker w-full">
           <div className="flex flex-col p-4 gap-4">
+            {user.esAdmin && (
+              <Button onClick={() => navigate("/gestores")}>Gestores</Button>
+            )}
             <Button onClick={() => navigate("/plantillas")}>Plantillas</Button>
             <Button onClick={() => navigate("/constancias")}>
               Constancias
             </Button>
-            {user.esAdmin && (
-              <Button onClick={() => navigate("/gestores")}>Gestores</Button>
-            )}
             <Button onClick={handleLogout}>Cerrar sesión</Button>
           </div>
         </div>
