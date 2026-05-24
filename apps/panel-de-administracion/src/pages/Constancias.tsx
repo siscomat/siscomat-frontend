@@ -7,6 +7,7 @@ import {
   ModalIcon,
   ModalTitle,
   ModalActions,
+  HelpButton,
 } from "../components";
 import { useAuth } from "../components";
 import {
@@ -468,7 +469,23 @@ export const Constancias = () => {
             variant="white"
             className="w-full lg:w-3/5 p-6 gap-4 shadow-card rounded-md border border-light-2 flex flex-col justify-center"
           >
-            <h2 className="heading-5">Cargar participantes</h2>
+            <div className="flex justify-between items-center w-full">
+              <h2 className="heading-5">Cargar participantes</h2>
+              <HelpButton title="Requisitos del archivo">
+                <p className="mb-1">
+                  Solo se permiten archivos <strong>.csv</strong> codificados en{" "}
+                  <strong>UTF-8</strong>.
+                </p>
+                <p>
+                  El archivo debe contener exactamente las siguientes columnas
+                  en la primera fila:
+                </p>
+                <code className="block mt-1 p-1 bg-light-2 text-info-darker rounded">
+                  folio,nombre,apellido1,apellido2,curso
+                </code>
+              </HelpButton>
+            </div>
+
             <div className="w-full mt-2 flex justify-center [&>div>div]:min-h-40 [&>div>div]:p-6">
               <FileUploader
                 key={fileUploaderKey}

@@ -8,6 +8,7 @@ import {
   ModalIcon,
   ModalTitle,
   ModalActions,
+  HelpButton,
 } from "../components";
 import { useAuth } from "../components";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
@@ -229,7 +230,23 @@ export const Plantillas = () => {
         <div className="flex flex-col lg:flex-row gap-6 w-full">
           <div className="flex flex-col gap-4 w-full lg:w-72 shrink-0">
             <Card variant="white" className="p-4 gap-3">
-              <h2 className="heading-5">Cargar plantilla</h2>
+              <div className="flex justify-between items-center w-full">
+                <h2 className="heading-5">Cargar plantilla</h2>
+                <HelpButton title="Requisitos del archivo">
+                  <p className="mb-1">
+                    Solo se permiten archivos <strong>.pdf</strong>.
+                  </p>
+                  <p>
+                    El documento debe contener los siguientes{" "}
+                    <em>placeholders</em>:
+                  </p>
+                  <ul className="list-disc pl-4 mt-1 space-y-1 font-mono text-info-darker bg-light-2 p-2 rounded">
+                    <li>{`{{NOMBRE COMPLETO PARTICIPANTE}}`}</li>
+                    <li>{`{{CURSO}}`}</li>
+                    <li>{`{{QR}}`}</li>
+                  </ul>
+                </HelpButton>
+              </div>
               <div className="flex flex-col gap-1 w-full">
                 <FileUploader
                   key={fileUploaderKey}
@@ -284,7 +301,7 @@ export const Plantillas = () => {
             </Card>
 
             <Card variant="white" className="p-4 gap-3">
-              <h2 className="heading-5">Plantillas</h2>
+              <h2 className="heading-5">Plantillas cargadas</h2>
               <ListContainer
                 isEmpty={plantillasVisibles.length === 0}
                 emptyMessage="No hay plantillas registradas."
